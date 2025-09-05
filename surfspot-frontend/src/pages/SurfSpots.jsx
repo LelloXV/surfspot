@@ -3,8 +3,6 @@ import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaf
 import 'leaflet/dist/leaflet.css';
 import '../styles/App.css';
 
-const api_wind = import.meta.env.VITE_OPENWEATHER_API_KEY;
-
 export default function SurfSpots() {
   const [spots, setSpots] = useState([]);
 
@@ -23,8 +21,6 @@ export default function SurfSpots() {
     return null;
   };
 
-  const windlayerurl = `http://maps.openweathermap.org/maps/2.0/weather/WND/{z}/{x}/{y}&appid=${api_wind}`;
-
   return (
     <MapContainer center={[42, 12]} zoom={5}>
       <TileLayer 
@@ -37,7 +33,6 @@ export default function SurfSpots() {
       url='https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png'
       />
       <TileLayer 
-      //url={windlayerurl}
       url="http://localhost:3000/weather?z={z}&x={x}&y={y}"
 	    attribution= 'Map data &copy; <a href="http://openweathermap.org">OpenWeatherMap</a>'
       />
