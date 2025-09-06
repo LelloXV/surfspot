@@ -10,7 +10,7 @@ export async function fetchSurfspots(token) {
 }
 
 export async function addSurfspot(data, token) {
-  const res = await fetch("http://localhost:3000/surfspots", {
+  const res = await fetch("http://localhost:3000/surfspots/createspot", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
